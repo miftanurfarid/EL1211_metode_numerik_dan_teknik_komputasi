@@ -1,4 +1,4 @@
-# EL1110 - Metode Numerik dan Teknik Komputasi
+# EL1211 - Metode Numerik dan Teknik Komputasi
 ## Teknik Elektro - Institut Teknologi Kalimantan
 
 ### Content: 
