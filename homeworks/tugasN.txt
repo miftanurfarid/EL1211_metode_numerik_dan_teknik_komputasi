@@ -1,0 +1,7 @@
+1. Tugas Besar no.09 (a-c) 3klmpk dan 10 (a-b) 2 klmpk
+2. Dibagi 5 kelompok.
+3. Masing2 kelompok: ngf, ngb, lagrange, stirling, hermitte.
+4. Membuat flowchart.
+5. Dibuat program matlabnya.
+6. 2 minggu! FIX!! Tgl 22-11-2018.
+7. dipresentasikan diluar sesi kuliah.
