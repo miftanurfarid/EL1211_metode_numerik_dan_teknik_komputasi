@@ -33,13 +33,24 @@ end
 
 % generate tabel
 fx = 1
+% for idy = 1:3
 while abs(fx) > 1*10e-7
-    x = linspace(x0,x1,10);
+    x = linspace(x0,x1,10)
     for idx = 1:length(x)-1
         x0 = x(idx);
         x1 = x(idx + 1);
-        if 
+        if (calFx(x0) * calFx(x1)) < 0
+            fprintf('Solusi ada di antara %i dan %i \n', x0,x1);
+            break;
+        end
     end
+    fx = min(calFx(x0), calFx(x1))
+end
+
+if abs(calFx(x0)) < abs(calFx(x1))
+    fprintf('Akar persamaannya adalah %f dengan error %i\n',x0,abs(calFx(x0)))
+else
+    fprintf('Akar persamaannya adalah %f dengan error %i\n',x1,abs(calFx(x1)))
 end
 
 
