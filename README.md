@@ -13,4 +13,4 @@
 ### Tugas Final
 - tugas_final_a : untuk kelas A (7 kelompok)
 - tugas_final_b : untuk kelas B (7 kelompok)
-- tugas_final   : 25 soal dibagi ke 7 kelompok **(belum FIX! jangan dikerjakan!)**
+- tugas_final   : untuk kelas A dan B
