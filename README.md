@@ -3,7 +3,8 @@
 
 ### Content: 
 
-- ets           : soal ets
+- uts           : kumpulan soal2 uts
+- uas		: kumpulan soal2 uas
 - homework      : soal tugas
 - quiz          : soal quiz
 - references    : ebook literatur
