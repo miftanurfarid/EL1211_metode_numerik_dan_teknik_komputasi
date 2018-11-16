@@ -35,7 +35,7 @@ for col = 1:length(x)-1
 end
 
 s = calS(xs, x(1), x(2));
-fxs = calNGF(s, fx, length(x))
+fxs = calNGF(s, fx, length(x));
 
 % persamaan NGF
 function y = calNGF(s, fx, pol)
