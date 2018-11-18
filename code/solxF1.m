@@ -40,7 +40,6 @@ fxs = calNGF(s, fx, length(x));
 % persamaan NGF
 function y = calNGF(s, fx, pol)
     f = fx(1,1);    % f0
-    fprintf('f0 = %.4f\n', f)
     for idx = 2:pol
         if idx == 2
             f = f + ( s * fx(1,idx) / calFac(idx-1) );
@@ -48,7 +47,6 @@ function y = calNGF(s, fx, pol)
             s = s * (s - (idx - 2));
             f = f + ( s * fx(1,idx) / calFac(idx-1) );
         end
-        fprintf('f%i = %.4f\n', idx - 1, f)
     end
     y = f;
 end

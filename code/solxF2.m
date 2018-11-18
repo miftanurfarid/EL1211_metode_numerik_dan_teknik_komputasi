@@ -2,9 +2,9 @@ clearvars; close all; clc;
 
 % Solusi Soal No.2
 % Tugas Final
-% Newton Gregory Forward
+% Newton Gregory Backward
 
-xs = 1.1875;
+xs = 3.3875;
 
 x = [
     1
@@ -15,6 +15,8 @@ x = [
     3.5
     4
     ];
+
+fprintf('');
 
 fx = zeros(length(x));
 
@@ -28,19 +30,23 @@ fx(:,1) = [
     -1.643
     ];
 
-for col = 1:length(x)-1
-    for row = 1:length(x)-col
-        fx(row,col+1) = fx(row+1,col) - fx(row,col);
+fprintf('');
+
+for col = 1 : (length(x) - 1)
+    for row = length(x) : -1 : (1 + col)
+        fx(row,col+1) = fx(row,col) - fx(row-1,col);
     end
 end
 
 s = calS(xs, x(1), x(2));
-fxs = calNGF(s, fx, length(x));
+fxs = calNGB(s, fx, length(x));
 
-% persamaan NGF
-function y = calNGF(s, fx, pol)
+fprintf('Untuk x = %.4f maka f(x) = %.4f\n\n', xs, fxs);
+
+% persamaan NGB
+function y = calNGB(s, fx, pol)
     f = fx(1,1);    % f0
-    fprintf('f0 = %.4f\n', f)
+    % fprintf('f0 = %.4f\n', f)
     for idx = 2:pol
         if idx == 2
             f = f + ( s * fx(1,idx) / calFac(idx-1) );
@@ -48,7 +54,7 @@ function y = calNGF(s, fx, pol)
             s = s * (s - (idx - 2));
             f = f + ( s * fx(1,idx) / calFac(idx-1) );
         end
-        fprintf('f%i = %.4f\n', idx - 1, f)
+        % fprintf('f%i = %.4f\n', idx - 1, f)
     end
     y = f;
 end
