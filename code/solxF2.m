@@ -1,6 +1,6 @@
 clearvars; close all; clc;
 
-% Solusi Soal No.2
+% Solusi Soal No.3
 % Tugas Final
 % Newton Gregory Backward
 
