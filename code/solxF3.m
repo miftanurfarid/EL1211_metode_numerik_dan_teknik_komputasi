@@ -1,13 +1,13 @@
-clearvars; close all; clc;
+clear all; close all; clc;
 
 % Solusi Soal No.4
 % Tugas Final
 % Stirling
 
-% titik yang dicari 
+% xs yang diketahui
 xs = 3.3875;
 
-% input yang diketahui
+% x yang diketahui
 x = [
     1
     1.5
@@ -18,6 +18,7 @@ x = [
     4
     ];
 
+% fx yang diketahui
 fx = zeros(length(x));
 
 fx(:,1) = [
@@ -29,3 +30,12 @@ fx(:,1) = [
     -1.5934
     -1.643
     ];
+
+n = length(x);
+
+if mod(n,2) == 1
+    zro = (n - 1) / 2 + 1;
+else
+    zro = n / 2;
+end
+

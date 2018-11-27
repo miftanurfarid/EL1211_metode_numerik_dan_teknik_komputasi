@@ -1,4 +1,4 @@
-clearvars; close all; clc;
+clear all; close all; clc;
 
 % Solusi Soal No.3
 % Tugas Final

@@ -1,4 +1,4 @@
-% clearvars; close all; clc;
+% clear all; close all; clc;
 
 function fxs = solxF1(xs,x,Fx)
 % Solusi Soal No.2
