@@ -1,0 +1,16 @@
+Contoh Soal Newton Rapshon
+
+Soal 1
+'x0.^2+4*x0-21'
+
+Soal 2
+'x0.^2+4*x0-21'
+
+Soal 3
+'4*x0.^2+7*x0-31'
+
+Soal 4
+'14*x0+5'
+
+Soal 5
+'x0.^3'
