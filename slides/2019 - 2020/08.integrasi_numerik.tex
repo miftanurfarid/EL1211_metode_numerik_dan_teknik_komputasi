@@ -1,0 +1,168 @@
+\documentclass[10pt]{beamer}
+
+\usetheme{metropolis}
+\usepackage{fontspec}
+\setsansfont[BoldFont={Fira Sans SemiBold}]{Fira Sans Book}
+\setsansfont{Fira Sans}
+\setmonofont{Fira Mono}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Metode Numerik dan Teknik Komputasi}
+\subtitle{Integrasi Numerik}
+\date{\today}
+\author{Mifta Nur Farid, S.T., M.T.}
+\institute{Teknik Elektro - Institut Teknologi Kalimantan \\ Karang Joang, Balikpapan}
+\titlegraphic{\hfill\includegraphics[height=1.5cm]{OK-LOGO-ITK.jpg}}
+
+\begin{document}
+
+\maketitle
+
+% \begin{frame}[fragile]{Pokok Bahasan}
+%     \setbeamertemplate{section in toc}[sections numbered]    \tableofcontents
+% \end{frame}
+
+\section{Pendahuluan}
+
+\begin{frame}[fragile]{Pendahuluan}
+    \begin{itemize}[<+- | alert@+>]
+        \item Penyelesaian lebih mudah untuk mencari nilai integral suatu fungsi yang cukup kompleks.
+        \item Misal mencari integral pada $x=1,0$ hingga $x=2,8$ dari fungsi berikut
+        $$f(x) = \frac{x^2 \ln(x) + e^{-x}}{5x \sin(x)}$$
+        $$f(x) = \frac{x^2 \cos(x)}{e^{-x}}$$
+        \item dan seterusnya.
+    \end{itemize}
+\end{frame}
+
+\section{Metode - Metode Integral Numerik}
+
+\begin{frame}[fragile]{Metode - Metode Integral Numerik}
+    Metode - metode yang akan diajarkan pada Bab Integral Numerik adalah
+    \begin{enumerate}[<+- | alert@+>]
+        \item Trapezoida
+        \item Simpson $\frac{1}{3}$
+    \end{enumerate}
+\end{frame}
+
+\section{Trapezoida}
+
+\begin{frame}[fragile]{Metode Trapezoida}
+    \begin{itemize}[<+- | alert@+>]
+        \item Metode mencari nilai integral dari fungsi $f(x)$ dengan batas tertentu (dari $x = x_0$ ke $x_n$).
+        \item Kondisi \emph{non-equispaced}
+        
+        \begin{equation*}
+            \int f(x) dx = \frac{(x_1 - x_0)}{2}(f_1 + f_0) + \cdots + \frac{(x_n - x_{n-1})}{2}(f_n + f_{n-1})
+        \end{equation*}
+
+        \item Kondisi \emph{equispaced}
+        
+        \begin{equation*}
+            \int f(x) dx = \frac{h}{2}[f_0 + 2(f_1 + f_2 + \cdots +f_{n-1}) + f_n]
+        \end{equation*}
+
+        dimana $h = x_1 - x_0 = x_2 - x_1 = \cdots = x_n - x_{n-1}$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Contoh Soal}
+    \begin{columns}[T,onlytextwidth]
+        \column{0.5\textwidth}
+        \begin{table}
+            \begin{tabular}{@{} ccc @{}}
+            \toprule
+            \textbf{n} &   \textbf{x} & \textbf{f(x)}\\
+            \midrule
+            0 &   1,0 & 1,449\\
+            1 &   1,3 & 2,060\\
+            2 &   1,6 & 2,645\\
+            3 &   1,9 & 3,216\\
+            4 &   2,2 & 3,779\\
+            5 &   2,5 & 4,338\\
+            6 &   2,6 & 4,898\\
+            \bottomrule
+            \end{tabular}
+        \end{table}
+
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item Carilah nilai integral dengan batas $x = 1,0$ hingga $x = 2,8$ dengan metode \textbf{Trapezoida}
+        \end{itemize}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Contoh Soal}
+    Karena merupakan tabel \alert{equispaced}, maka integral $f(x)$ dengan batas $x = 1,0$ hingga $x = 2,8$
+    
+    \begin{align*}
+        \int f(x) dx =& \frac{h}{2}[f_0 + 2(f_1 + f_2 + f_3 + f_4 + f_5) + f_6]\\
+        {} =& \frac{(1,3 - 1,0)}{2}[1,449 + 2(2,060 + 2,645 + 3,216 + 3,779 + 4,338)\\
+        &+ 4,898] \\
+        {} &= 5,76345
+    \end{align*}
+\end{frame}
+
+\section{Simpson $\frac{1}{3}$}
+
+\begin{frame}[fragile]{Metode Simpson $\frac{1}{3}$}
+    \begin{itemize}[<+- | alert@+>]
+        \item Metode mencari nilai integral fungsi $f(x)$ dengan batas tertentu (dari $x = x_0$ ke $x_n$)
+        \item Hanya untuk kondisi equispaced
+        $$\int f(x) dx = \frac{h}{3}[f_0 + 4(f_1 + f_3 + f_5 + \cdots + f_{n-1}) + 2(f_2 + f_4 + f_6 + \cdots + f_{n-2} + f_n]$$
+        \item Lebih efektif jika n adalah genap
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Contoh Soal}
+    \begin{columns}[T,onlytextwidth]
+        \column{0.5\textwidth}
+        \begin{table}
+            \begin{tabular}{@{} ccc @{}}
+            \toprule
+            \textbf{n} &   \textbf{x} & \textbf{f(x)}\\
+            \midrule
+            0 &   1,0 & 1,449\\
+            1 &   1,3 & 2,060\\
+            2 &   1,6 & 2,645\\
+            3 &   1,9 & 3,216\\
+            4 &   2,2 & 3,779\\
+            5 &   2,5 & 4,338\\
+            6 &   2,6 & 4,898\\
+            \bottomrule
+            \end{tabular}
+        \end{table}
+
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item Carilah nilai integral dengan batas $x = 1,0$ hingga $x = 2,8$ dengan metode \textbf{Simpson $\frac{1}{3}$}
+        \end{itemize}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Contoh Soal}
+    Karena merupakan tabel \alert{equispaced}, maka integral $f(x)$ dengan batas $x = 1,0$ hingga $x = 2,8$
+    
+    \begin{align*}
+        \int f(x) dx =& \frac{h}{3}[f_0 + 4(f_1 + f_3 + f_5) + 2(f_2 + f_4) + f_6]\\
+        {} =& \frac{(1,3 - 1,0)}{3}[1,449 + 4(2,060 + 3,216 + 4,338) \\
+        &+ 2(2,645 + 3,779) + 4,898 + 4,898] \\
+        {} =& 5,7651
+    \end{align*}
+\end{frame}
+
+\begin{frame}[standout]
+    Ada Pertanyaan?
+\end{frame}
+  
+\appendix
+  
+\end{document}
