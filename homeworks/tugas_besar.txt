@@ -1,0 +1,7 @@
+Tugas Besar
+Metode Numerik dan Teknik Komputasi.
+
+Silahkan mencari data pengukuran, baik data primer maupun sekunder. Kemudian olah data tersebut menggunakan metode-metode numerik yang sudah kalian pelajari. Gunakan kreatifitas dan ketajaman pemahaman anda dalam mengolah data tersebut.
+Pengolahan data tidak dibatasi hanya menggunakan MATLAB, silahkan menggunakan aplikasi komputasi apa saja yang kalian kuasai.
+Asistensi minimal 3x.
+Presentasi Tugas Besar akan dilakukan pada minggu ke 14-15.
